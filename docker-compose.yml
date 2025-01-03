@@ -1,0 +1,13 @@
+version: '3'
+services:
+  appname:
+    build: ./AppName
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./AppName:/app
+    container_name: AppName
+    restart: unless-stopped
+    stdin_open: true  # Habilitar entrada interactiva
+    tty: true         # Habilitar tty
+    command: /bin/bash  # Cambiar el comando para iniciar una shell interactiva
